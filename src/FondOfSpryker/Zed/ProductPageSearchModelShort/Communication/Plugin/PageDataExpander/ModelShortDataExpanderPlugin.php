@@ -23,9 +23,9 @@ class ModelShortDataExpanderPlugin extends AbstractPlugin implements ProductPage
             return;
         }
 
-        $attributesData = \json_decode($productData['attributes'], true);
+        $productAttributeData = \json_decode($productData['attributes'], true);
 
-        if (!array_key_exists(PageIndexMap::MODEL_SHORT, $attributesData)) {
+        if (!array_key_exists(PageIndexMap::MODEL_SHORT, $productAttributeData)) {
             return;
         }
 
@@ -33,6 +33,6 @@ class ModelShortDataExpanderPlugin extends AbstractPlugin implements ProductPage
             return;
         }
 
-        $productAbstractPageSearchTransfer->setModelShort($attributesData[PageIndexMap::MODEL_SHORT]);
+        $productAbstractPageSearchTransfer->setModelShort($productAttributeData[PageIndexMap::MODEL_SHORT] === null ?: '');
     }
 }

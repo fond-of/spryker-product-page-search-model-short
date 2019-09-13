@@ -30,7 +30,6 @@ class ModelShortPageMapExpanderPlugin extends AbstractPlugin implements ProductP
         }
 
         $this->addModelShortToPageMapTransfer($pageMapTransfer, $productData);
-        $this->addModelShortToSearchResult($pageMapTransfer, $pageMapBuilder, $productData);
 
         return $pageMapTransfer;
     }
@@ -44,17 +43,5 @@ class ModelShortPageMapExpanderPlugin extends AbstractPlugin implements ProductP
     protected function addModelShortToPageMapTransfer(PageMapTransfer $pageMapTransfer, array $productData): void
     {
         $pageMapTransfer->setModelShort($productData[PageIndexMap::MODEL_SHORT]);
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\PageMapTransfer $pageMapTransfer
-     * @param \Spryker\Zed\Search\Business\Model\Elasticsearch\DataMapper\PageMapBuilderInterface $pageMapBuilder
-     * @param array $productData
-     *
-     * @return void
-     */
-    protected function addModelShortToSearchResult(PageMapTransfer $pageMapTransfer, PageMapBuilderInterface $pageMapBuilder, array $productData): void
-    {
-        $pageMapBuilder->addSearchResultData($pageMapTransfer, PageIndexMap::MODEL_SHORT, $productData[PageIndexMap::MODEL_SHORT]);
     }
 }
