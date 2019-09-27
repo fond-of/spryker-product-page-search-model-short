@@ -2,11 +2,11 @@
 
 namespace FondOfSpryker\Client\ProductPageSearchModelShort;
 
-use Spryker\Client\Kernel\AbstractPlugin;
+use Spryker\Client\Kernel\AbstractFactory;
 use Spryker\Client\Search\Model\Elasticsearch\Query\QueryBuilder;
 use Spryker\Client\Search\Model\Elasticsearch\Query\QueryBuilderInterface;
 
-class ProductPageSearchModelShortFactory extends AbstractPlugin
+class ProductPageSearchModelShortFactory extends AbstractFactory
 {
     /**
      * @return \Spryker\Client\Search\Model\Elasticsearch\Query\QueryBuilderInterface
